@@ -1,0 +1,210 @@
+
+//重置浏览器样式
+@import "../../scss/_normalize";
+//变量
+@import "../../scss/_variables";
+$dpr-base: 32;//因为箱数不一样dpr要进行重置
+//公用类
+@import "../../scss/_mixins";
+
+//公用实例
+@import "../../scss/_utilities";
+
+//页面组件
+@import "../../scss/_components";
+
+$ios-background-color: #f8f8f8;
+
+html,body {
+  width: 100%;
+}
+#clipboardBox {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0,0,0,0.3);
+  z-index: 9992;
+  position: fixed;
+  display: none;
+}
+#clipboard {
+    height: 500px;
+    width: 500px;
+    margin-top: -250px;
+    margin-left: -250px;
+     position: absolute;
+    z-index: 9999;
+    padding: 40px;
+    top:50%;
+    left:50%;
+    @include display-flex(column,center,center);
+    background-color: $ios-background-color;
+
+    @include box-shadow(0 3rem/$dpr-base 12rem/$dpr-base darken(#9c9c9c, 10%));
+    @include border-radius(10px);
+    textarea {
+      width: 500px;
+      height: 300px;
+      margin-bottom: 40px;
+    }
+    button {
+
+    }
+}
+#editor {
+  $editor-width: 60vw;
+  background-color: $background-color;
+  float: right;
+  @include border-radius(px);
+  @include box-shadow(0 3rem/$dpr-base 12rem/$dpr-base darken(#9c9c9c, 10%));
+  width: $editor-width;
+  min-height: 100vh;
+  #tools {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    font-size: 16px;
+    position: fixed;
+    color: $color-dark;
+    background-color: $ios-background-color;
+    border: 10px;
+    line-height: 48px;
+    border-bottom: 5px solid $color-lightgray;
+    width:$editor-width;
+    top:0;
+    right: 0;
+    div {
+      cursor: pointer;
+      display: inline-block;
+      padding: 0 0.4rem;
+      &:hover,
+      &:active {
+        background-color: $color-white;
+      }
+    }
+  }
+  #container {
+    color: $color-dark;
+    padding: 60px 20px;
+    font-size: 16px;
+    .block {
+      border: 1px solid $color-lightgray;
+      margin: 20px 0;
+      overflow: hidden;
+      @include border-radius(5px);
+      .header {
+        color: $color-darklighter;
+        padding: 5px;
+        margin-bottom: 20px;
+        background-color: $ios-background-color;
+        line-height: 21px;
+        border-bottom: 1px solid $color-lightgray;
+        .title {
+          display: inline-block;
+        }
+      }
+      .content {
+        padding: 0 10px 20px 10px;
+        @include display-flex(row,flex-start,center);
+        .list-input {
+          width: 50px;
+        }
+        .input {
+          @include flex(1)
+        }
+        .title {
+          margin: 0 10px;
+        }
+      }
+      .clear {
+        width: 20px;
+        text-align: center;
+        cursor: pointer;
+        display: inline-block;
+        float: right;
+        color: $color-lightgray;
+        font-size: 20px;
+        &:hover,
+        &:active {
+
+          color: $color-dark;
+        }
+      }
+    }
+  }
+}
+
+#mobile {
+  position: fixed;
+  background-color: $background-color;
+  $mobile-height: 800px;
+  $mobile-width: 467px;
+  $view-height: 568px;
+  $view-width: 320px;
+  float: left;
+  width: $mobile-width;
+  height: $mobile-height;
+  background: center top no-repeat url(../img/iphone6.jpg);
+  background-size: $mobile-width;
+  margin: 0 auto;
+  #mobileView {
+    background-color: #fff;
+    margin: 85px auto 0;
+    width: $view-width;
+    cursor: pointer;
+    height: $view-height;
+    @include box-sizing(border-box);
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-user-drag: none;
+    -ms-content-zooming: none;
+    touch-action: manipulation;
+    word-wrap: break-word;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    text-size-adjust: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    #mobileStatusbar {
+      padding: 5px 0;
+      background-color: $ios-background-color;
+      display: block!important;
+      z-index: 999;
+      top: 0;
+      height:20px;
+      max-width: 100%;
+      border: 0;
+      @include box-sizing(border-box)
+    }
+    #header {
+      height:30px;
+      line-height:30px;
+      background-color: $ios-background-color;
+      font-size: 17px;
+      color: #181818;
+      text-align: center;
+      @include box-sizing(border-box);
+      border-bottom: 1px solid #aaaaaa;
+    }
+    #body {
+      height: $view-height - 50px;
+      width: 100%;
+      overflow-y: scroll;
+      scrollbar-face-color: #fcfcfc;
+      scrollbar-highlight-color: #6c6c90;
+      scrollbar-shadow-color: #fcfcfc;
+      scrollbar-3dlight-color: #fcfcfc;
+      scrollbar-arrow-color: #240024;
+      scrollbar-track-color: #fcfcfc;
+      scrollbar-darkshadow-color: #48486c;
+      scrollbar-base-color: #fcfcfc
+    }
+  }
+}
+
+
+
+

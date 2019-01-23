@@ -1,0 +1,41 @@
+/*
+Error: Invalid GBK character "\xE9"
+        on line 2 of style.scss
+
+1: 
+2: //重置浏览器样式
+3: @import "../../scss/_normalize";
+4: //变量
+5: @import "../../scss/_variables";
+6: $dpr-base: 32;//因为箱数不一样dpr要进行重置
+7: //公用类
+
+Backtrace:
+style.scss:2
+C:/tools/ruby24/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/util.rb:1325:in `rescue in block in find_encoding_error'
+C:/tools/ruby24/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/util.rb:1322:in `block in find_encoding_error'
+C:/tools/ruby24/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/util.rb:1321:in `each'
+C:/tools/ruby24/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/util.rb:1321:in `each_with_index'
+C:/tools/ruby24/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/util.rb:1321:in `find_encoding_error'
+C:/tools/ruby24/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/util.rb:930:in `check_sass_encoding'
+C:/tools/ruby24/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/engine.rb:436:in `check_encoding!'
+C:/tools/ruby24/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/engine.rb:392:in `_to_tree'
+C:/tools/ruby24/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/engine.rb:381:in `_render_with_sourcemap'
+C:/tools/ruby24/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/engine.rb:298:in `render_with_sourcemap'
+C:/tools/ruby24/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+C:/tools/ruby24/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+C:/tools/ruby24/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:209:in `each'
+C:/tools/ruby24/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+C:/tools/ruby24/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/plugin.rb:82:in `update_stylesheets'
+C:/tools/ruby24/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/exec/sass_scss.rb:340:in `watch_or_update'
+C:/tools/ruby24/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/exec/sass_scss.rb:51:in `process_result'
+C:/tools/ruby24/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/exec/base.rb:52:in `parse'
+C:/tools/ruby24/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/exec/base.rb:19:in `parse!'
+C:/tools/ruby24/lib/ruby/gems/2.4.0/gems/sass-3.4.24/bin/scss:13:in `<top (required)>'
+C:/tools/ruby24/bin/scss:22:in `load'
+C:/tools/ruby24/bin/scss:22:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid GBK character \"\xE9\"\A         on line 2 of style.scss\A \A 1: \A 2: //重置浏览器样式\A 3: @import \"../../scss/_normalize\";\A 4: //变量\A 5: @import \"../../scss/_variables\";\A 6: $dpr-base: 32;//因为箱数不一样dpr要进行重置\A 7: //公用类"; }
